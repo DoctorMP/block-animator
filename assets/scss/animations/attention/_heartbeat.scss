@@ -1,0 +1,20 @@
+@keyframes ba-heartbeat {
+	0% {
+		transform: none;
+	}
+	2% {
+		transform: scale(1.2);
+	}
+	6% {
+		transform: none;
+	}
+	8% {
+		transform: scale(1.1);
+	}
+	12% {
+		transform: none;
+	}
+}
+.ba-heartbeat {
+	animation-name: ba-heartbeat;
+}

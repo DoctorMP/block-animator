@@ -1,0 +1,12 @@
+@keyframes ba-zoom-and-spin {
+	100% {
+		transform: none;
+	}
+}
+
+.ba-zoom-and-spin {
+	transform: scale(0) rotate(-1080deg);
+	&.ba-animated {
+		animation-name: ba-zoom-and-spin;
+	}
+}

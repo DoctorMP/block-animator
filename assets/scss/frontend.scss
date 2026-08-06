@@ -1,0 +1,12 @@
+@use "base/scroll-animations";
+@use "base/repeated-animations";
+@use "animations/entrances/fade-in";
+@use "animations/entrances/fade-in-up";
+@use "animations/entrances/fade-in-left";
+@use "animations/entrances/fade-in-right";
+@use "animations/entrances/zoom-in";
+@use "animations/entrances/zoom-and-fade";
+@use "animations/entrances/zoom-and-spin";
+@use "animations/attention/shake";
+@use "animations/attention/pulse";
+@use "animations/attention/heartbeat";

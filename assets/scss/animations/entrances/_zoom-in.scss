@@ -1,0 +1,12 @@
+@keyframes ba-zoom-in {
+  100% {
+	transform: none;
+  }
+}
+
+.ba-zoom-in {
+	transform: scale(0);
+	&.ba-animated {
+		animation-name: ba-zoom-in;
+	}
+}

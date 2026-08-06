@@ -1,0 +1,14 @@
+@keyframes ba-fade-in-up {
+  100% {
+	opacity: 1;
+	transform: none;
+  }
+}
+
+.ba-fade-in-up {
+	opacity: 0;
+	transform: translateY(50%);
+	&.ba-animated {
+		animation-name: ba-fade-in-up;
+	}
+}

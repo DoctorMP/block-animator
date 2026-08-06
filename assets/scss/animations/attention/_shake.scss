@@ -1,0 +1,30 @@
+@keyframes ba-shake {
+	0% {
+		transform: none;
+	}
+	0.5% {
+		transform: translate(-2em, 30%);
+	}
+	1.5% {
+		transform: translate(-2em, -30%);
+	}
+	2.5% {
+		transform: translate(2em, 30%);
+	}
+	3.5% {
+		transform: translate(2em, -30%);
+	}
+	4.5% {
+		transform: translate(-2em, 30%);
+	}
+	5% {
+		transform: none;
+	}
+	100% {
+		transform: none;
+	}
+}
+
+.ba-shake {
+	animation-name: ba-shake;
+}

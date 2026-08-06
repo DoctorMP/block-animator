@@ -1,0 +1,18 @@
+@keyframes ba-pulse {
+	0% {
+		transform: none;
+	}
+	3% {
+		transform: scale(1.2);
+	}
+	10% {
+		transform: none;
+	}
+	100% {
+		transform: none;
+	}
+}
+
+.ba-pulse {
+	animation-name: ba-pulse;
+}

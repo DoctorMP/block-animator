@@ -1,0 +1,8 @@
+
+.ba-has-scroll-animation {
+	animation-fill-mode: forwards;
+	animation-duration: var(--ba-duration);
+	animation-delay: var(--ba-delay);
+	animation-timing-function: var(--ba-timing);
+	animation-iteration-count: 1;
+}

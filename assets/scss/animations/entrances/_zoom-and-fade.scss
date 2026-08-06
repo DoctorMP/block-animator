@@ -1,0 +1,14 @@
+@keyframes ba-zoom-and-fade {
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.ba-zoom-and-spin {
+	transform: scale(0);
+	opacity: 0;
+	&.ba-animated {
+		animation-name: ba-zoom-and-fade;
+	}
+}
