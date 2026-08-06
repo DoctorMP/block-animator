@@ -9,7 +9,7 @@ No shortcodes, no wrapper blocks, no page-builder lock-in.
 
 ## Status
 
-Early development. The editor panel, settings page, and the class/data-attribute rendering logic all work end-to-end for both animation types. Not done yet: the actual `@keyframes`/animation CSS (blocks currently get the right classes and data attributes, but nothing visibly animates).
+Early development. The editor panel, settings page, and the rendering logic all work end-to-end for both animation types, and most of the animations have real `@keyframes` CSS now — a few are still to be written.
 
 ## Settings
 
@@ -27,3 +27,15 @@ sass --watch assets/scss:assets/css --no-source-map                      # rebui
 ```
 
 Requires [Dart Sass](https://sass-lang.com/dart-sass/) (`sass` on your `PATH`) — there's no `package.json`/npm wrapper for this yet, just the CLI directly.
+
+## Building a release zip
+
+The release zip is what you'd upload via *Plugins → Add New → Upload Plugin*. Run this from the plugin's folder (`wp-content/plugins/block-animator`):
+
+```bash
+sh release.sh
+```
+
+This compiles the CSS for you (same `sass` command as above — Dart Sass still needs to be on your `PATH`), then zips everything except the Sass source (`assets/scss/`), git files, log files, `release.sh` itself, the `release/` folder, and any `.md` files into `release/block-animator.zip`. No `npm install` step needed — there's no JS build.
+
+The zip's top-level folder is always named `block-animator`, even if your local checkout is named something else (e.g. a GitHub archive download like `block-animator-main`) — the script renames it for the duration of the build and restores your original folder name afterward.
