@@ -64,5 +64,14 @@ class Editor_Assets implements Registrable {
 				),
 			)
 		);
+
+		// Explicit path, not relying on WordPress's automatic (no-path)
+		// call for block.json "textdomain" fields — this plugin has none
+		// (it doesn't register its own blocks), and even where that
+		// mechanism applies elsewhere, an explicit path avoids depending
+		// on WP_Textdomain_Registry already being populated by the time
+		// this script registers. See form-blocks' block loader for the
+		// same reasoning in more detail.
+		wp_set_script_translations( 'block-animator-editor', 'block-animator', BLOCK_ANIMATOR_PLUGIN_PATH . 'languages' );
 	}
 }

@@ -1,0 +1,192 @@
+# Copyright (C) 2026 Michał Pawelczyk
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Block Animator 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/block-animator\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-08-06T14:47:29+00:00\n"
+"PO-Revision-Date: 2026-08-06T14:47:29+00:00\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: manual\n"
+"X-Domain: block-animator\n"
+
+
+#. Plugin Name of the plugin
+#: block-animator.php
+#: inc/class-settings.php:58
+#: inc/class-settings.php:59
+#: inc/class-settings.php:192
+msgid "Block Animator"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: block-animator.php
+msgid "https://michal-pawelczyk.net/wp-plugins/block-animator"
+msgstr ""
+
+#. Description of the plugin
+#: block-animator.php
+msgid "Adds scroll-triggered CSS animations to any block in the block editor."
+msgstr "Додає CSS-анімації, що запускаються прокручуванням, до будь-якого блоку в редакторі блоків."
+
+#. Author of the plugin
+#: block-animator.php
+msgid "Michał Pawelczyk"
+msgstr ""
+
+#. Author URI of the plugin
+#: block-animator.php
+msgid "https://michal-pawelczyk.net"
+msgstr ""
+
+#: inc/class-animations.php:75
+msgid "None"
+msgstr "Немає"
+
+#: inc/class-animations.php:80
+#: inc/class-timing-functions.php:44
+msgid "Default"
+msgstr "За замовчуванням"
+
+#: inc/class-animations.php:85
+msgid "Fade In"
+msgstr "Поява"
+
+#: inc/class-animations.php:90
+msgid "Fade In Up"
+msgstr "Поява знизу"
+
+#: inc/class-animations.php:95
+msgid "Fade In Right"
+msgstr "Поява справа"
+
+#: inc/class-animations.php:100
+msgid "Fade In Left"
+msgstr "Поява зліва"
+
+#: inc/class-animations.php:105
+msgid "Zoom In"
+msgstr "Збільшення"
+
+#: inc/class-animations.php:110
+msgid "Zoom and Fade"
+msgstr "Збільшення з появою"
+
+#: inc/class-animations.php:115
+msgid "Zoom and Spin"
+msgstr "Збільшення з обертанням"
+
+#: inc/class-animations.php:120
+msgid "Shake"
+msgstr "Тремтіння"
+
+#: inc/class-animations.php:125
+msgid "Pulse"
+msgstr "Пульсація"
+
+#: inc/class-animations.php:130
+msgid "Heartbeat"
+msgstr "Серцебиття"
+
+#: inc/class-animations.php:135
+msgid "Blink"
+msgstr "Блимання"
+
+#: inc/class-settings.php:85
+msgid "Scroll-Triggered Animation Defaults"
+msgstr "Типові налаштування анімацій, що запускаються прокручуванням"
+
+#: inc/class-settings.php:92
+#: inc/class-settings.php:131
+msgid "Default animation"
+msgstr "Типова анімація"
+
+#: inc/class-settings.php:100
+#: inc/class-settings.php:139
+msgid "Default duration (ms)"
+msgstr "Типова тривалість (мс)"
+
+#: inc/class-settings.php:108
+msgid "Default delay (ms)"
+msgstr "Типова затримка (мс)"
+
+#: inc/class-settings.php:116
+msgid "Default timing function"
+msgstr "Типова функція часу"
+
+#: inc/class-settings.php:124
+msgid "Repeated Animation Defaults"
+msgstr "Типові налаштування повторюваних анімацій"
+
+#: inc/class-settings.php:147
+msgid "Default interval (ms)"
+msgstr "Типовий інтервал (мс)"
+
+#: inc/class-settings.php:161
+msgid "Used whenever a scroll-triggered block's own animation, duration, delay, or timing function is left on \"Default\"."
+msgstr "Використовується, коли власна анімація, тривалість, затримка або функція часу блоку з анімацією, що запускається прокручуванням, залишені на значенні «За замовчуванням»."
+
+#: inc/class-settings.php:174
+msgid "Used whenever a repeated-animation block's own animation, duration, or interval is left on \"Default\"."
+msgstr "Використовується, коли власна анімація, тривалість або інтервал блоку з повторюваною анімацією залишені на значенні «За замовчуванням»."
+
+#: inc/class-timing-functions.php:48
+msgid "Ease"
+msgstr "Плавно"
+
+#: inc/class-timing-functions.php:52
+msgid "Ease In"
+msgstr "Плавно (прискорення)"
+
+#: inc/class-timing-functions.php:56
+msgid "Ease Out"
+msgstr "Плавно (уповільнення)"
+
+#: inc/class-timing-functions.php:60
+msgid "Ease In Out"
+msgstr "Плавно (прискорення й уповільнення)"
+
+#: inc/class-timing-functions.php:64
+msgid "Linear"
+msgstr "Лінійно"
+
+#: assets/js/editor.js:47
+msgid "Scroll-triggered animation"
+msgstr "Анімація, що запускається прокручуванням"
+
+#: assets/js/editor.js:48
+msgid "Repeated animation"
+msgstr "Повторювана анімація"
+
+#: assets/js/editor.js:109
+#: assets/js/editor.js:161
+#: assets/js/editor.js:219
+msgid "Animation"
+msgstr "Анімація"
+
+#: assets/js/editor.js:119
+#: assets/js/editor.js:171
+msgid "Duration (ms)"
+msgstr "Тривалість (мс)"
+
+#: assets/js/editor.js:129
+msgid "Delay (ms)"
+msgstr "Затримка (мс)"
+
+#: assets/js/editor.js:138
+msgid "Timing function"
+msgstr "Функція часу"
+
+#: assets/js/editor.js:172
+msgid "Number of milliseconds for one iteration of the animation and interval combined."
+msgstr "Кількість мілісекунд на одну ітерацію анімації та інтервалу разом."
+
+#: assets/js/editor.js:199
+msgid "Animation type"
+msgstr "Тип анімації"
