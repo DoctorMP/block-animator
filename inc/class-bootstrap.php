@@ -15,6 +15,10 @@
 
 namespace BlockAnimator;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Bootstrap
  *

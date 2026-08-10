@@ -13,6 +13,10 @@
 
 namespace BlockAnimator;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Frontend_Assets
  *
@@ -40,22 +44,26 @@ class Frontend_Assets implements Registrable {
 		$css_file = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/css/frontend.css';
 		$js_file  = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/js/frontend.js';
 
-		wp_enqueue_style(
-			'block-animator-frontend',
-			BLOCK_ANIMATOR_PLUGIN_URL . 'assets/css/frontend.css',
-			array(),
-			(string) filemtime( $css_file )
-		);
+		if ( file_exists( $css_file ) ) {
+			wp_enqueue_style(
+				'block-animator-frontend',
+				BLOCK_ANIMATOR_PLUGIN_URL . 'assets/css/frontend.css',
+				array(),
+				(string) filemtime( $css_file )
+			);
 
-		wp_add_inline_style( 'block-animator-frontend', $this->root_custom_properties() );
+			wp_add_inline_style( 'block-animator-frontend', $this->root_custom_properties() );
+		}
 
-		wp_enqueue_script(
-			'block-animator-frontend',
-			BLOCK_ANIMATOR_PLUGIN_URL . 'assets/js/frontend.js',
-			array(),
-			(string) filemtime( $js_file ),
-			true
-		);
+		if ( file_exists( $js_file ) ) {
+			wp_enqueue_script(
+				'block-animator-frontend',
+				BLOCK_ANIMATOR_PLUGIN_URL . 'assets/js/frontend.js',
+				array(),
+				(string) filemtime( $js_file ),
+				true
+			);
+		}
 	}
 
 	/**

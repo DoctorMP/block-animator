@@ -13,6 +13,10 @@
 
 namespace BlockAnimator;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Settings
  *
@@ -397,9 +401,14 @@ class Settings implements Registrable {
 	 * @return array<string, mixed>
 	 */
 	public static function get_options(): array {
-		$saved = get_option( self::OPTION_NAME, array() );
+		static $options = null;
 
-		return wp_parse_args( is_array( $saved ) ? $saved : array(), self::defaults() );
+		if ( null === $options ) {
+			$saved   = get_option( self::OPTION_NAME, array() );
+			$options = wp_parse_args( is_array( $saved ) ? $saved : array(), self::defaults() );
+		}
+
+		return $options;
 	}
 
 	/**

@@ -12,6 +12,10 @@
 
 namespace BlockAnimator;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Interface Registrable
  *

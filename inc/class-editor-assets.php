@@ -12,6 +12,10 @@
 
 namespace BlockAnimator;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class Editor_Assets
  *
@@ -37,6 +41,10 @@ class Editor_Assets implements Registrable {
 	 */
 	public function enqueue(): void {
 		$file = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/js/editor.js';
+
+		if ( ! file_exists( $file ) ) {
+			return;
+		}
 
 		wp_enqueue_script(
 			'block-animator-editor',
