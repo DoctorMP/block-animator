@@ -10,17 +10,17 @@
  * be animation-aware.
  *
  * A block is animated in exactly one of two mutually exclusive ways,
- * chosen via its baAnimationType attribute:
+ * chosen via its gutenboingAnimationType attribute:
  * - "scroll" (default): a scroll-triggered animation, played once when
  *   the block enters the viewport (see assets/js/frontend.js).
  * - "repeat": an attention-seeker animation, looped continuously on a
  *   fixed interval — pure CSS, no JS trigger involved.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -39,7 +39,7 @@ class Block_Renderer implements Registrable {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	const SCROLL_MARKER_CLASS = 'ba-has-scroll-animation';
+	const SCROLL_MARKER_CLASS = 'gutenboing-has-scroll-animation';
 
 	/**
 	 * Marker class for looped attention-seeker animations. Deliberately
@@ -48,7 +48,7 @@ class Block_Renderer implements Registrable {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	const REPEAT_MARKER_CLASS = 'ba-has-repeat-animation';
+	const REPEAT_MARKER_CLASS = 'gutenboing-has-repeat-animation';
 
 	/**
 	 * {@inheritDoc}
@@ -75,7 +75,7 @@ class Block_Renderer implements Registrable {
 		}
 
 		$attrs = is_array( $block['attrs'] ?? null ) ? $block['attrs'] : array();
-		$type  = $attrs['baAnimationType'] ?? 'scroll';
+		$type  = $attrs['gutenboingAnimationType'] ?? 'scroll';
 
 		if ( 'repeat' === $type ) {
 			return $this->maybe_animate_repeat( $block_content, $attrs );
@@ -93,23 +93,23 @@ class Block_Renderer implements Registrable {
 	 * @return string
 	 */
 	private function maybe_animate_scroll( string $block_content, array $attrs ): string {
-		$animation = $this->resolve_scroll_animation( $attrs['baAnimation'] ?? Animations::NONE );
+		$animation = $this->resolve_scroll_animation( $attrs['gutenboingAnimation'] ?? Animations::NONE );
 
 		if ( Animations::NONE === $animation ) {
 			return $block_content;
 		}
 
-		$duration = $this->resolve_ms( $attrs['baAnimationDuration'] ?? null, array( Settings::class, 'get_default_duration' ) );
-		$delay    = $this->resolve_ms( $attrs['baAnimationDelay'] ?? null, array( Settings::class, 'get_default_delay' ) );
-		$timing   = $this->resolve_timing( $attrs['baAnimationTimingFunction'] ?? Timing_Functions::DEFAULT_SENTINEL );
+		$duration = $this->resolve_ms( $attrs['gutenboingAnimationDuration'] ?? null, array( Settings::class, 'get_default_duration' ) );
+		$delay    = $this->resolve_ms( $attrs['gutenboingAnimationDelay'] ?? null, array( Settings::class, 'get_default_delay' ) );
+		$timing   = $this->resolve_timing( $attrs['gutenboingAnimationTimingFunction'] ?? Timing_Functions::DEFAULT_SENTINEL );
 
 		return $this->inject_custom_properties(
 			$block_content,
-			array( self::SCROLL_MARKER_CLASS, 'ba-' . $animation ),
+			array( self::SCROLL_MARKER_CLASS, 'gutenboing-' . $animation ),
 			array(
-				'--ba-duration' => $duration . 'ms',
-				'--ba-delay'    => $delay . 'ms',
-				'--ba-timing'   => $timing,
+				'--gutenboing-duration' => $duration . 'ms',
+				'--gutenboing-delay'    => $delay . 'ms',
+				'--gutenboing-timing'   => $timing,
 			)
 		);
 	}
@@ -123,19 +123,19 @@ class Block_Renderer implements Registrable {
 	 * @return string
 	 */
 	private function maybe_animate_repeat( string $block_content, array $attrs ): string {
-		$animation = $this->resolve_repeat_animation( $attrs['baRepeatAnimation'] ?? Animations::NONE );
+		$animation = $this->resolve_repeat_animation( $attrs['gutenboingRepeatAnimation'] ?? Animations::NONE );
 
 		if ( Animations::NONE === $animation ) {
 			return $block_content;
 		}
 
-		$duration = $this->resolve_ms( $attrs['baRepeatDuration'] ?? null, array( Settings::class, 'get_default_repeat_duration' ) );
+		$duration = $this->resolve_ms( $attrs['gutenboingRepeatDuration'] ?? null, array( Settings::class, 'get_default_repeat_duration' ) );
 
 		return $this->inject_custom_properties(
 			$block_content,
-			array( self::REPEAT_MARKER_CLASS, 'ba-' . $animation ),
+			array( self::REPEAT_MARKER_CLASS, 'gutenboing-' . $animation ),
 			array(
-				'--ba-repeat-duration' => $duration . 'ms',
+				'--gutenboing-repeat-duration' => $duration . 'ms',
 			)
 		);
 	}
@@ -235,7 +235,7 @@ class Block_Renderer implements Registrable {
 	 * @since  0.1.0
 	 * @param  string                $html         Rendered block HTML.
 	 * @param  string[]              $classes      Classes to add (marker + animation-name).
-	 * @param  array<string, string> $custom_props Custom property name => value pairs, e.g. '--ba-duration' => '600ms'.
+	 * @param  array<string, string> $custom_props Custom property name => value pairs, e.g. '--gutenboing-duration' => '600ms'.
 	 * @return string
 	 */
 	private function inject_custom_properties( string $html, array $classes, array $custom_props ): string {

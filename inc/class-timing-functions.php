@@ -6,11 +6,11 @@
  * shared by both the per-block Inspector panel and the site-wide
  * settings page.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -45,27 +45,27 @@ class Timing_Functions {
 		if ( null === $functions ) {
 			$functions = array(
 				self::DEFAULT_SENTINEL => array(
-					'label'        => __( 'Default', 'block-animator' ),
+					'label'        => __( 'Default', 'gutenboing' ),
 					'site_default' => false,
 				),
 				'ease'                 => array(
-					'label'        => __( 'Ease', 'block-animator' ),
+					'label'        => __( 'Ease', 'gutenboing' ),
 					'site_default' => true,
 				),
 				'ease-in'              => array(
-					'label'        => __( 'Ease In', 'block-animator' ),
+					'label'        => __( 'Ease In', 'gutenboing' ),
 					'site_default' => true,
 				),
 				'ease-out'             => array(
-					'label'        => __( 'Ease Out', 'block-animator' ),
+					'label'        => __( 'Ease Out', 'gutenboing' ),
 					'site_default' => true,
 				),
 				'ease-in-out'          => array(
-					'label'        => __( 'Ease In Out', 'block-animator' ),
+					'label'        => __( 'Ease In Out', 'gutenboing' ),
 					'site_default' => true,
 				),
 				'linear'               => array(
-					'label'        => __( 'Linear', 'block-animator' ),
+					'label'        => __( 'Linear', 'gutenboing' ),
 					'site_default' => true,
 				),
 			);

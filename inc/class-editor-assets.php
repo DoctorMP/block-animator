@@ -6,11 +6,11 @@
  * and an Inspector Controls panel to every block, and passes it the
  * shared animation/timing registries plus the resolved site defaults.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -40,23 +40,23 @@ class Editor_Assets implements Registrable {
 	 * @return void
 	 */
 	public function enqueue(): void {
-		$file = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/js/editor.js';
+		$file = GUTENBOING_PLUGIN_PATH . 'assets/js/editor.js';
 
 		if ( ! file_exists( $file ) ) {
 			return;
 		}
 
 		wp_enqueue_script(
-			'block-animator-editor',
-			BLOCK_ANIMATOR_PLUGIN_URL . 'assets/js/editor.js',
+			'gutenboing-editor',
+			GUTENBOING_PLUGIN_URL . 'assets/js/editor.js',
 			array( 'wp-blocks', 'wp-block-editor', 'wp-components', 'wp-compose', 'wp-element', 'wp-hooks', 'wp-i18n' ),
 			(string) filemtime( $file ),
 			true
 		);
 
 		wp_localize_script(
-			'block-animator-editor',
-			'blockAnimatorData',
+			'gutenboing-editor',
+			'mpGutenBoingData',
 			array(
 				'scrollAnimations'    => Animations::choices_for_block( Animations::CATEGORY_SCROLL ),
 				'attentionAnimations' => Animations::choices_for_block( Animations::CATEGORY_ATTENTION ),
@@ -80,6 +80,6 @@ class Editor_Assets implements Registrable {
 		// on WP_Textdomain_Registry already being populated by the time
 		// this script registers. See form-blocks' block loader for the
 		// same reasoning in more detail.
-		wp_set_script_translations( 'block-animator-editor', 'block-animator', BLOCK_ANIMATOR_PLUGIN_PATH . 'languages' );
+		wp_set_script_translations( 'gutenboing-editor', 'gutenboing', GUTENBOING_PLUGIN_PATH . 'languages' );
 	}
 }

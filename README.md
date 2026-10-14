@@ -1,4 +1,4 @@
-# Block Animator
+# GutenBoing
 
 A WordPress plugin that adds animations to any block in the block editor — an "Animation" panel appears in every block's settings sidebar, letting you pick one of two animation types:
 
@@ -13,7 +13,7 @@ Early development. The editor panel, settings page, and the rendering logic all 
 
 ## Settings
 
-**Settings → Block Animator** lets an administrator set the site-wide defaults separately for each animation type — used whenever a block's own value is left on "Default" (or, for animation/duration/delay/interval, simply never set).
+**Settings → GutenBoing** lets an administrator set the site-wide defaults separately for each animation type — used whenever a block's own value is left on "Default" (or, for animation/duration/delay/interval, simply never set).
 
 ## Development
 
@@ -30,12 +30,12 @@ Requires [Dart Sass](https://sass-lang.com/dart-sass/) (`sass` on your `PATH`) �
 
 ## Building a release zip
 
-The release zip is what you'd upload via *Plugins → Add New → Upload Plugin*. Run this from the plugin's folder (`wp-content/plugins/block-animator`):
+The release zip is what you'd upload via *Plugins → Add New → Upload Plugin*. Run this from the plugin's folder (`wp-content/plugins/gutenboing`):
 
 ```bash
 sh release.sh
 ```
 
-This compiles the CSS for you (same `sass` command as above — Dart Sass still needs to be on your `PATH`), then zips everything except the Sass source (`assets/scss/`), git files, log files, `release.sh` itself, the `release/` folder, and any `.md` files into `release/block-animator.zip`. No `npm install` step needed — there's no JS build.
+This compiles the CSS for you (same `sass` command as above — Dart Sass still needs to be on your `PATH`), then zips everything except the Sass source (`assets/scss/`), git files, log files, `release.sh` itself, the `release/` folder, and any `.md` files into `release/gutenboing.zip`. No `npm install` step needed — there's no JS build.
 
-The zip's top-level folder is always named `block-animator`, even if your local checkout is named something else (e.g. a GitHub archive download like `block-animator-main`) — the script renames it for the duration of the build and restores your original folder name afterward.
+The zip's top-level folder is always named `gutenboing`, even if your local checkout is named something else (e.g. a GitHub archive download like `gutenboing-main`) — the script renames it for the duration of the build and restores your original folder name afterward.

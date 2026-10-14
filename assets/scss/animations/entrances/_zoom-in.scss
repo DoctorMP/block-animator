@@ -1,12 +1,12 @@
-@keyframes ba-zoom-in {
+@keyframes gutenboing-zoom-in {
   100% {
 	transform: none;
   }
 }
 
-.ba-zoom-in {
+.gutenboing-zoom-in {
 	transform: scale(0);
-	&.ba-animated {
-		animation-name: ba-zoom-in;
+	&.gutenboing-animated {
+		animation-name: gutenboing-zoom-in;
 	}
 }

@@ -7,11 +7,11 @@
  * animated blocks can come from post content, template parts, patterns,
  * or widgets alike.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -41,24 +41,24 @@ class Frontend_Assets implements Registrable {
 	 * @return void
 	 */
 	public function enqueue(): void {
-		$css_file = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/css/frontend.css';
-		$js_file  = BLOCK_ANIMATOR_PLUGIN_PATH . 'assets/js/frontend.js';
+		$css_file = GUTENBOING_PLUGIN_PATH . 'assets/css/frontend.css';
+		$js_file  = GUTENBOING_PLUGIN_PATH . 'assets/js/frontend.js';
 
 		if ( file_exists( $css_file ) ) {
 			wp_enqueue_style(
-				'block-animator-frontend',
-				BLOCK_ANIMATOR_PLUGIN_URL . 'assets/css/frontend.css',
+				'gutenboing-frontend',
+				GUTENBOING_PLUGIN_URL . 'assets/css/frontend.css',
 				array(),
 				(string) filemtime( $css_file )
 			);
 
-			wp_add_inline_style( 'block-animator-frontend', $this->root_custom_properties() );
+			wp_add_inline_style( 'gutenboing-frontend', $this->root_custom_properties() );
 		}
 
 		if ( file_exists( $js_file ) ) {
 			wp_enqueue_script(
-				'block-animator-frontend',
-				BLOCK_ANIMATOR_PLUGIN_URL . 'assets/js/frontend.js',
+				'gutenboing-frontend',
+				GUTENBOING_PLUGIN_URL . 'assets/js/frontend.js',
 				array(),
 				(string) filemtime( $js_file ),
 				true
@@ -73,8 +73,8 @@ class Frontend_Assets implements Registrable {
 	 * which additionally writes each animated block's own resolved
 	 * values inline (see Block_Renderer::inject_custom_properties()).
 	 *
-	 * Scroll and repeat mode use distinct property names (--ba-duration
-	 * vs --ba-repeat-duration) even though both are "a duration" —
+	 * Scroll and repeat mode use distinct property names (--gutenboing-duration
+	 * vs --gutenboing-repeat-duration) even though both are "a duration" —
 	 * they're independent site-wide settings and can't share one :root
 	 * slot without one silently overwriting the other.
 	 *
@@ -83,7 +83,7 @@ class Frontend_Assets implements Registrable {
 	 */
 	private function root_custom_properties(): string {
 		return sprintf(
-			':root{--ba-duration:%1$dms;--ba-delay:%2$dms;--ba-timing:%3$s;--ba-repeat-duration:%4$dms;}',
+			':root{--gutenboing-duration:%1$dms;--gutenboing-delay:%2$dms;--gutenboing-timing:%3$s;--gutenboing-repeat-duration:%4$dms;}',
 			Settings::get_default_duration(),
 			Settings::get_default_delay(),
 			Settings::get_default_timing_function(),

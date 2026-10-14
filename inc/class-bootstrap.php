@@ -7,13 +7,13 @@
  * is decoupled from the individual services it boots.
  *
  * To add a new service, implement Registrable and pass an instance to
- * the constructor in block-animator.php — no changes needed here.
+ * the constructor in gutenboing.php — no changes needed here.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

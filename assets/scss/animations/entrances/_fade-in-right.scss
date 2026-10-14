@@ -1,14 +1,14 @@
-@keyframes ba-fade-in-right {
+@keyframes gutenboing-fade-in-right {
   100% {
 	opacity: 1;
 	transform: none;
   }
 }
 
-.ba-fade-in-right {
+.gutenboing-fade-in-right {
 	opacity: 0;
 	transform: translateX(-50%);
-	&.ba-animated {
-		animation-name: ba-fade-in-right;
+	&.gutenboing-animated {
+		animation-name: gutenboing-fade-in-right;
 	}
 }

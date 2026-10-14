@@ -10,11 +10,11 @@
  * new animation here and it becomes available everywhere its category
  * is used.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -76,67 +76,67 @@ class Animations {
 		if ( null === $animations ) {
 			$animations = array(
 				self::NONE             => array(
-					'label'        => __( 'None', 'block-animator' ),
+					'label'        => __( 'None', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => null,
 				),
 				self::DEFAULT_SENTINEL => array(
-					'label'        => __( 'Default', 'block-animator' ),
+					'label'        => __( 'Default', 'gutenboing' ),
 					'site_default' => false,
 					'category'     => null,
 				),
 				'fade-in'              => array(
-					'label'        => __( 'Fade In', 'block-animator' ),
+					'label'        => __( 'Fade In', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-up'           => array(
-					'label'        => __( 'Fade In Up', 'block-animator' ),
+					'label'        => __( 'Fade In Up', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-right'        => array(
-					'label'        => __( 'Fade In Right', 'block-animator' ),
+					'label'        => __( 'Fade In Right', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-left'         => array(
-					'label'        => __( 'Fade In Left', 'block-animator' ),
+					'label'        => __( 'Fade In Left', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-in'              => array(
-					'label'        => __( 'Zoom In', 'block-animator' ),
+					'label'        => __( 'Zoom In', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-and-fade'        => array(
-					'label'        => __( 'Zoom and Fade', 'block-animator' ),
+					'label'        => __( 'Zoom and Fade', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-and-spin'        => array(
-					'label'        => __( 'Zoom and Spin', 'block-animator' ),
+					'label'        => __( 'Zoom and Spin', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'shake'                => array(
-					'label'        => __( 'Shake', 'block-animator' ),
+					'label'        => __( 'Shake', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'pulse'                => array(
-					'label'        => __( 'Pulse', 'block-animator' ),
+					'label'        => __( 'Pulse', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'heartbeat'            => array(
-					'label'        => __( 'Heartbeat', 'block-animator' ),
+					'label'        => __( 'Heartbeat', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'blink'                => array(
-					'label'        => __( 'Blink', 'block-animator' ),
+					'label'        => __( 'Blink', 'gutenboing' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),

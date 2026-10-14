@@ -21,11 +21,11 @@
  * assets/js/editor.js's addAnimationAttributes() — same keys, types,
  * and defaults.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -51,7 +51,7 @@ class Block_Attributes implements Registrable {
 	/**
 	 * Merge the animation attributes into a block type's registration
 	 * args. A block's own attribute definition — however unlikely a
-	 * name collision is given the "ba" prefix — always wins.
+	 * name collision is given the "gutenboing" prefix — always wins.
 	 *
 	 * @since  0.1.0
 	 * @param  array<string, mixed> $args Block type registration args.
@@ -74,29 +74,29 @@ class Block_Attributes implements Registrable {
 	 */
 	private static function attribute_schema(): array {
 		return array(
-			'baAnimationType'           => array(
+			'gutenboingAnimationType'           => array(
 				'type'    => 'string',
 				'default' => 'scroll',
 			),
-			'baAnimation'               => array(
+			'gutenboingAnimation'               => array(
 				'type'    => 'string',
 				'default' => Animations::NONE,
 			),
-			'baAnimationDuration'       => array(
+			'gutenboingAnimationDuration'       => array(
 				'type' => 'number',
 			),
-			'baAnimationDelay'          => array(
+			'gutenboingAnimationDelay'          => array(
 				'type' => 'number',
 			),
-			'baAnimationTimingFunction' => array(
+			'gutenboingAnimationTimingFunction' => array(
 				'type'    => 'string',
 				'default' => Timing_Functions::DEFAULT_SENTINEL,
 			),
-			'baRepeatAnimation'         => array(
+			'gutenboingRepeatAnimation'         => array(
 				'type'    => 'string',
 				'default' => Animations::NONE,
 			),
-			'baRepeatDuration'          => array(
+			'gutenboingRepeatDuration'          => array(
 				'type' => 'number',
 			),
 		);

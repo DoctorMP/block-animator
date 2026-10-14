@@ -6,11 +6,11 @@
  * This is the foundation for the Dependency Inversion and Interface
  * Segregation principles used throughout the plugin.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

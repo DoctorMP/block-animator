@@ -1,4 +1,4 @@
-@keyframes ba-fade-in {
+@keyframes gutenboing-fade-in {
   0% {
 	opacity: 0;
   }
@@ -7,9 +7,9 @@
   }
 }
 
-.ba-fade-in {
+.gutenboing-fade-in {
 	opacity: 0;
-	&.ba-animated {
-		animation-name: ba-fade-in;
+	&.gutenboing-animated {
+		animation-name: gutenboing-fade-in;
 	}
 }

@@ -1,9 +1,9 @@
 /**
- * Block Animator — editor script.
+ * GutenBoing — editor script.
  *
  * Adds animation attributes to every block, and a "Scroll Animation"
  * Inspector Controls panel to edit them. A block is animated in one of
- * two mutually exclusive ways (baAnimationType): a scroll-triggered
+ * two mutually exclusive ways (gutenboingAnimationType): a scroll-triggered
  * animation (played once, on entering the viewport) or a repeated
  * attention-seeker animation (looped on a fixed interval, no trigger).
  * Switching between the two keeps each mode's own settings intact.
@@ -24,7 +24,7 @@
 	var Fragment = wp.element.Fragment;
 	var __ = wp.i18n.__;
 
-	var data = window.blockAnimatorData || {
+	var data = window.mpGutenBoingData || {
 		scrollAnimations: {},
 		attentionAnimations: {},
 		timingFunctions: {},
@@ -44,8 +44,8 @@
 	}
 
 	var animationTypeOptions = [
-		{ value: 'scroll', label: __( 'Scroll-triggered animation', 'block-animator' ) },
-		{ value: 'repeat', label: __( 'Repeated animation', 'block-animator' ) },
+		{ value: 'scroll', label: __( 'Scroll-triggered animation', 'gutenboing' ) },
+		{ value: 'repeat', label: __( 'Repeated animation', 'gutenboing' ) },
 	];
 
 	var scrollAnimationOptions = toOptions( data.scrollAnimations );
@@ -60,29 +60,29 @@
 	 */
 	function addAnimationAttributes( settings ) {
 		settings.attributes = Object.assign( {}, settings.attributes, {
-			baAnimationType: {
+			gutenboingAnimationType: {
 				type: 'string',
 				default: 'scroll',
 			},
-			baAnimation: {
+			gutenboingAnimation: {
 				type: 'string',
 				default: 'none',
 			},
-			baAnimationDuration: {
+			gutenboingAnimationDuration: {
 				type: 'number',
 			},
-			baAnimationDelay: {
+			gutenboingAnimationDelay: {
 				type: 'number',
 			},
-			baAnimationTimingFunction: {
+			gutenboingAnimationTimingFunction: {
 				type: 'string',
 				default: 'default',
 			},
-			baRepeatAnimation: {
+			gutenboingRepeatAnimation: {
 				type: 'string',
 				default: 'none',
 			},
-			baRepeatDuration: {
+			gutenboingRepeatDuration: {
 				type: 'number',
 			},
 		} );
@@ -90,7 +90,7 @@
 		return settings;
 	}
 
-	addFilter( 'blocks.registerBlockType', 'block-animator/attributes', addAnimationAttributes );
+	addFilter( 'blocks.registerBlockType', 'gutenboing/attributes', addAnimationAttributes );
 
 	/**
 	 * Build the controls shown for scroll-triggered animations.
@@ -100,46 +100,46 @@
 	 * @return {Array} control elements
 	 */
 	function scrollControls( attributes, setAttributes ) {
-		var durationValue = attributes.baAnimationDuration === undefined ? '' : String( attributes.baAnimationDuration );
-		var delayValue = attributes.baAnimationDelay === undefined ? '' : String( attributes.baAnimationDelay );
+		var durationValue = attributes.gutenboingAnimationDuration === undefined ? '' : String( attributes.gutenboingAnimationDuration );
+		var delayValue = attributes.gutenboingAnimationDelay === undefined ? '' : String( attributes.gutenboingAnimationDelay );
 
 		return [
 			el( SelectControl, {
 				key: 'animation',
-				label: __( 'Animation', 'block-animator' ),
-				value: attributes.baAnimation,
+				label: __( 'Animation', 'gutenboing' ),
+				value: attributes.gutenboingAnimation,
 				options: scrollAnimationOptions,
 				onChange: function ( value ) {
-					setAttributes( { baAnimation: value } );
+					setAttributes( { gutenboingAnimation: value } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'duration',
 				type: 'number',
-				label: __( 'Duration (ms)', 'block-animator' ),
+				label: __( 'Duration (ms)', 'gutenboing' ),
 				placeholder: String( data.defaults.duration ),
 				value: durationValue,
 				onChange: function ( value ) {
-					setAttributes( { baAnimationDuration: '' === value ? undefined : Number( value ) } );
+					setAttributes( { gutenboingAnimationDuration: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'delay',
 				type: 'number',
-				label: __( 'Delay (ms)', 'block-animator' ),
+				label: __( 'Delay (ms)', 'gutenboing' ),
 				placeholder: String( data.defaults.delay ),
 				value: delayValue,
 				onChange: function ( value ) {
-					setAttributes( { baAnimationDelay: '' === value ? undefined : Number( value ) } );
+					setAttributes( { gutenboingAnimationDelay: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 			el( SelectControl, {
 				key: 'timing',
-				label: __( 'Timing function', 'block-animator' ),
-				value: attributes.baAnimationTimingFunction,
+				label: __( 'Timing function', 'gutenboing' ),
+				value: attributes.gutenboingAnimationTimingFunction,
 				options: timingOptions,
 				onChange: function ( value ) {
-					setAttributes( { baAnimationTimingFunction: value } );
+					setAttributes( { gutenboingAnimationTimingFunction: value } );
 				},
 			} ),
 		];
@@ -153,27 +153,27 @@
 	 * @return {Array} control elements
 	 */
 	function repeatControls( attributes, setAttributes ) {
-		var durationValue = attributes.baRepeatDuration === undefined ? '' : String( attributes.baRepeatDuration );
+		var durationValue = attributes.gutenboingRepeatDuration === undefined ? '' : String( attributes.gutenboingRepeatDuration );
 
 		return [
 			el( SelectControl, {
 				key: 'repeat-animation',
-				label: __( 'Animation', 'block-animator' ),
-				value: attributes.baRepeatAnimation,
+				label: __( 'Animation', 'gutenboing' ),
+				value: attributes.gutenboingRepeatAnimation,
 				options: attentionAnimationOptions,
 				onChange: function ( value ) {
-					setAttributes( { baRepeatAnimation: value } );
+					setAttributes( { gutenboingRepeatAnimation: value } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'repeat-duration',
 				type: 'number',
-				label: __( 'Duration (ms)', 'block-animator' ),
-				help: __( 'Number of milliseconds for one iteration of the animation and interval combined.', 'block-animator' ),
+				label: __( 'Duration (ms)', 'gutenboing' ),
+				help: __( 'Number of milliseconds for one iteration of the animation and interval combined.', 'gutenboing' ),
 				placeholder: String( data.defaults.repeatDuration ),
 				value: durationValue,
 				onChange: function ( value ) {
-					setAttributes( { baRepeatDuration: '' === value ? undefined : Number( value ) } );
+					setAttributes( { gutenboingRepeatDuration: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 		];
@@ -184,11 +184,11 @@
 			var attributes = props.attributes;
 			var setAttributes = props.setAttributes;
 
-			if ( ! attributes || undefined === attributes.baAnimationType ) {
+			if ( ! attributes || undefined === attributes.gutenboingAnimationType ) {
 				return el( BlockEdit, props );
 			}
 
-			var animationType = attributes.baAnimationType || 'scroll';
+			var animationType = attributes.gutenboingAnimationType || 'scroll';
 			var modeControls = 'repeat' === animationType
 				? repeatControls( attributes, setAttributes )
 				: scrollControls( attributes, setAttributes );
@@ -196,11 +196,11 @@
 			var panelChildren = [
 				el( SelectControl, {
 					key: 'animation-type',
-					label: __( 'Animation type', 'block-animator' ),
+					label: __( 'Animation type', 'gutenboing' ),
 					value: animationType,
 					options: animationTypeOptions,
 					onChange: function ( value ) {
-						setAttributes( { baAnimationType: value } );
+						setAttributes( { gutenboingAnimationType: value } );
 					},
 				} ),
 			].concat( modeControls );
@@ -216,7 +216,7 @@
 						null,
 						[
 							PanelBody,
-							{ title: __( 'Animation', 'block-animator' ), initialOpen: false },
+							{ title: __( 'Animation', 'gutenboing' ), initialOpen: false },
 						].concat( panelChildren )
 					)
 				)
@@ -224,5 +224,5 @@
 		};
 	}, 'withAnimationControls' );
 
-	addFilter( 'editor.BlockEdit', 'block-animator/controls', withAnimationControls );
+	addFilter( 'editor.BlockEdit', 'gutenboing/controls', withAnimationControls );
 } )( window.wp );

@@ -2,16 +2,16 @@
 /**
  * Settings page.
  *
- * Registers the "Block Animator" options page under Settings, where an
+ * Registers the "GutenBoing" options page under Settings, where an
  * administrator sets the site-wide defaults used whenever a block is
  * left on "Default" — separately for scroll-triggered animations and
  * for repeated (attention seeker) animations.
  *
- * @package Block Animator
+ * @package GutenBoing
  * @since   0.1.0
  */
 
-namespace BlockAnimator;
+namespace GutenBoing;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -30,7 +30,7 @@ class Settings implements Registrable {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	const OPTION_NAME = 'block_animator_settings';
+	const OPTION_NAME = 'gutenboing_settings';
 
 	/**
 	 * Settings page / option group slug.
@@ -38,7 +38,7 @@ class Settings implements Registrable {
 	 * @since 0.1.0
 	 * @var   string
 	 */
-	const PAGE_SLUG = 'block-animator';
+	const PAGE_SLUG = 'gutenboing';
 
 	/**
 	 * {@inheritDoc}
@@ -52,15 +52,15 @@ class Settings implements Registrable {
 	}
 
 	/**
-	 * Add the settings page under Settings → Block Animator.
+	 * Add the settings page under Settings → GutenBoing.
 	 *
 	 * @since  0.1.0
 	 * @return void
 	 */
 	public function add_settings_page(): void {
 		add_options_page(
-			__( 'Block Animator', 'block-animator' ),
-			__( 'Block Animator', 'block-animator' ),
+			__( 'GutenBoing', 'gutenboing' ),
+			__( 'GutenBoing', 'gutenboing' ),
 			'manage_options',
 			self::PAGE_SLUG,
 			array( $this, 'render_page' )
@@ -85,73 +85,73 @@ class Settings implements Registrable {
 		);
 
 		add_settings_section(
-			'block_animator_scroll_defaults',
-			__( 'Scroll-Triggered Animation Defaults', 'block-animator' ),
+			'gutenboing_scroll_defaults',
+			__( 'Scroll-Triggered Animation Defaults', 'gutenboing' ),
 			array( $this, 'render_scroll_section_description' ),
 			self::PAGE_SLUG
 		);
 
 		add_settings_field(
 			'default_animation',
-			__( 'Default animation', 'block-animator' ),
+			__( 'Default animation', 'gutenboing' ),
 			array( $this, 'render_animation_field' ),
 			self::PAGE_SLUG,
-			'block_animator_scroll_defaults'
+			'gutenboing_scroll_defaults'
 		);
 
 		add_settings_field(
 			'default_duration',
-			__( 'Default duration (ms)', 'block-animator' ),
+			__( 'Default duration (ms)', 'gutenboing' ),
 			array( $this, 'render_duration_field' ),
 			self::PAGE_SLUG,
-			'block_animator_scroll_defaults'
+			'gutenboing_scroll_defaults'
 		);
 
 		add_settings_field(
 			'default_delay',
-			__( 'Default delay (ms)', 'block-animator' ),
+			__( 'Default delay (ms)', 'gutenboing' ),
 			array( $this, 'render_delay_field' ),
 			self::PAGE_SLUG,
-			'block_animator_scroll_defaults'
+			'gutenboing_scroll_defaults'
 		);
 
 		add_settings_field(
 			'default_timing_function',
-			__( 'Default timing function', 'block-animator' ),
+			__( 'Default timing function', 'gutenboing' ),
 			array( $this, 'render_timing_field' ),
 			self::PAGE_SLUG,
-			'block_animator_scroll_defaults'
+			'gutenboing_scroll_defaults'
 		);
 
 		add_settings_section(
-			'block_animator_repeat_defaults',
-			__( 'Repeated Animation Defaults', 'block-animator' ),
+			'gutenboing_repeat_defaults',
+			__( 'Repeated Animation Defaults', 'gutenboing' ),
 			array( $this, 'render_repeat_section_description' ),
 			self::PAGE_SLUG
 		);
 
 		add_settings_field(
 			'default_repeat_animation',
-			__( 'Default animation', 'block-animator' ),
+			__( 'Default animation', 'gutenboing' ),
 			array( $this, 'render_repeat_animation_field' ),
 			self::PAGE_SLUG,
-			'block_animator_repeat_defaults'
+			'gutenboing_repeat_defaults'
 		);
 
 		add_settings_field(
 			'default_repeat_duration',
-			__( 'Default duration (ms)', 'block-animator' ),
+			__( 'Default duration (ms)', 'gutenboing' ),
 			array( $this, 'render_repeat_duration_field' ),
 			self::PAGE_SLUG,
-			'block_animator_repeat_defaults'
+			'gutenboing_repeat_defaults'
 		);
 
 		add_settings_field(
 			'default_repeat_interval',
-			__( 'Default interval (ms)', 'block-animator' ),
+			__( 'Default interval (ms)', 'gutenboing' ),
 			array( $this, 'render_repeat_interval_field' ),
 			self::PAGE_SLUG,
-			'block_animator_repeat_defaults'
+			'gutenboing_repeat_defaults'
 		);
 	}
 
@@ -164,7 +164,7 @@ class Settings implements Registrable {
 	public function render_scroll_section_description(): void {
 		esc_html_e(
 			'Used whenever a scroll-triggered block\'s own animation, duration, delay, or timing function is left on "Default".',
-			'block-animator'
+			'gutenboing'
 		);
 	}
 
@@ -177,7 +177,7 @@ class Settings implements Registrable {
 	public function render_repeat_section_description(): void {
 		esc_html_e(
 			'Used whenever a repeated-animation block\'s own animation, duration, or interval is left on "Default".',
-			'block-animator'
+			'gutenboing'
 		);
 	}
 
@@ -193,7 +193,7 @@ class Settings implements Registrable {
 		}
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Block Animator', 'block-animator' ); ?></h1>
+			<h1><?php esc_html_e( 'GutenBoing', 'gutenboing' ); ?></h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( self::PAGE_SLUG );
