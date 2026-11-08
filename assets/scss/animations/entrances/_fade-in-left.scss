@@ -1,14 +1,14 @@
-@keyframes gutenboing-fade-in-left {
+@keyframes animora-fade-in-left {
   100% {
 	opacity: 1;
 	transform: none;
   }
 }
 
-.gutenboing-fade-in-left {
+.animora-fade-in-left {
 	opacity: 0;
 	transform: translateX(50%);
-	&.gutenboing-animated {
-		animation-name: gutenboing-fade-in-left;
+	&.animora-animated {
+		animation-name: animora-fade-in-left;
 	}
 }

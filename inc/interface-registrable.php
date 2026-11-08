@@ -6,11 +6,11 @@
  * This is the foundation for the Dependency Inversion and Interface
  * Segregation principles used throughout the plugin.
  *
- * @package GutenBoing
+ * @package Animora
  * @since   0.1.0
  */
 
-namespace GutenBoing;
+namespace Animora;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

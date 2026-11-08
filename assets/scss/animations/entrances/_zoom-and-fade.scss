@@ -1,14 +1,14 @@
-@keyframes gutenboing-zoom-and-fade {
+@keyframes animora-zoom-and-fade {
 	100% {
 		opacity: 1;
 		transform: none;
 	}
 }
 
-.gutenboing-zoom-and-spin {
+.animora-zoom-and-spin {
 	transform: scale(0);
 	opacity: 0;
-	&.gutenboing-animated {
-		animation-name: gutenboing-zoom-and-fade;
+	&.animora-animated {
+		animation-name: animora-zoom-and-fade;
 	}
 }

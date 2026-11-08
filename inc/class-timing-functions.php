@@ -6,11 +6,11 @@
  * shared by both the per-block Inspector panel and the site-wide
  * settings page.
  *
- * @package GutenBoing
+ * @package Animora
  * @since   0.1.0
  */
 
-namespace GutenBoing;
+namespace Animora;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -45,27 +45,27 @@ class Timing_Functions {
 		if ( null === $functions ) {
 			$functions = array(
 				self::DEFAULT_SENTINEL => array(
-					'label'        => __( 'Default', 'gutenboing' ),
+					'label'        => __( 'Default', 'animora' ),
 					'site_default' => false,
 				),
 				'ease'                 => array(
-					'label'        => __( 'Ease', 'gutenboing' ),
+					'label'        => __( 'Ease', 'animora' ),
 					'site_default' => true,
 				),
 				'ease-in'              => array(
-					'label'        => __( 'Ease In', 'gutenboing' ),
+					'label'        => __( 'Ease In', 'animora' ),
 					'site_default' => true,
 				),
 				'ease-out'             => array(
-					'label'        => __( 'Ease Out', 'gutenboing' ),
+					'label'        => __( 'Ease Out', 'animora' ),
 					'site_default' => true,
 				),
 				'ease-in-out'          => array(
-					'label'        => __( 'Ease In Out', 'gutenboing' ),
+					'label'        => __( 'Ease In Out', 'animora' ),
 					'site_default' => true,
 				),
 				'linear'               => array(
-					'label'        => __( 'Linear', 'gutenboing' ),
+					'label'        => __( 'Linear', 'animora' ),
 					'site_default' => true,
 				),
 			);

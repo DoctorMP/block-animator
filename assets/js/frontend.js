@@ -1,8 +1,8 @@
 /**
- * GutenBoing — frontend script.
+ * Animora — frontend script.
  *
- * Watches every element with the gutenboing-has-scroll-animation class and adds
- * gutenboing-animated to it the first time it scrolls into the viewport. Each
+ * Watches every element with the animora-has-scroll-animation class and adds
+ * animora-animated to it the first time it scrolls into the viewport. Each
  * element is unobserved right after triggering, so the animation plays
  * once per page load. Elements already in the viewport at page load are
  * animated immediately, without waiting for a scroll — see isInViewport().
@@ -33,8 +33,8 @@
 	 *
 	 * @return {void}
 	 */
-	function initMpGutenBoing() {
-		var elements = document.querySelectorAll( '.gutenboing-has-scroll-animation' );
+	function initMpAnimora() {
+		var elements = document.querySelectorAll( '.animora-has-scroll-animation' );
 
 		if ( ! elements.length ) {
 			return;
@@ -42,7 +42,7 @@
 
 		if ( ! ( 'IntersectionObserver' in window ) ) {
 			elements.forEach( function ( element ) {
-				element.classList.add( 'gutenboing-animated' );
+				element.classList.add( 'animora-animated' );
 			} );
 			return;
 		}
@@ -50,7 +50,7 @@
 		var observer = new IntersectionObserver( function ( entries, obs ) {
 			entries.forEach( function ( entry ) {
 				if ( entry.isIntersecting ) {
-					entry.target.classList.add( 'gutenboing-animated' );
+					entry.target.classList.add( 'animora-animated' );
 					obs.unobserve( entry.target );
 				}
 			} );
@@ -65,7 +65,7 @@
 			// reliably prompt in practice once the script runs from
 			// the footer while layout is still settling (fonts/images).
 			if ( isInViewport( element ) ) {
-				element.classList.add( 'gutenboing-animated' );
+				element.classList.add( 'animora-animated' );
 				return;
 			}
 
@@ -74,8 +74,8 @@
 	}
 
 	if ( 'loading' === document.readyState ) {
-		document.addEventListener( 'DOMContentLoaded', initMpGutenBoing );
+		document.addEventListener( 'DOMContentLoaded', initMpAnimora );
 	} else {
-		initMpGutenBoing();
+		initMpAnimora();
 	}
 } )();

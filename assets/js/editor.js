@@ -1,9 +1,9 @@
 /**
- * GutenBoing — editor script.
+ * Animora — editor script.
  *
  * Adds animation attributes to every block, and a "Scroll Animation"
  * Inspector Controls panel to edit them. A block is animated in one of
- * two mutually exclusive ways (gutenboingAnimationType): a scroll-triggered
+ * two mutually exclusive ways (animoraAnimationType): a scroll-triggered
  * animation (played once, on entering the viewport) or a repeated
  * attention-seeker animation (looped on a fixed interval, no trigger).
  * Switching between the two keeps each mode's own settings intact.
@@ -24,7 +24,7 @@
 	var Fragment = wp.element.Fragment;
 	var __ = wp.i18n.__;
 
-	var data = window.mpGutenBoingData || {
+	var data = window.mpAnimoraData || {
 		scrollAnimations: {},
 		attentionAnimations: {},
 		timingFunctions: {},
@@ -44,8 +44,8 @@
 	}
 
 	var animationTypeOptions = [
-		{ value: 'scroll', label: __( 'Scroll-triggered animation', 'gutenboing' ) },
-		{ value: 'repeat', label: __( 'Repeated animation', 'gutenboing' ) },
+		{ value: 'scroll', label: __( 'Scroll-triggered animation', 'animora' ) },
+		{ value: 'repeat', label: __( 'Repeated animation', 'animora' ) },
 	];
 
 	var scrollAnimationOptions = toOptions( data.scrollAnimations );
@@ -60,29 +60,29 @@
 	 */
 	function addAnimationAttributes( settings ) {
 		settings.attributes = Object.assign( {}, settings.attributes, {
-			gutenboingAnimationType: {
+			animoraAnimationType: {
 				type: 'string',
 				default: 'scroll',
 			},
-			gutenboingAnimation: {
+			animoraAnimation: {
 				type: 'string',
 				default: 'none',
 			},
-			gutenboingAnimationDuration: {
+			animoraAnimationDuration: {
 				type: 'number',
 			},
-			gutenboingAnimationDelay: {
+			animoraAnimationDelay: {
 				type: 'number',
 			},
-			gutenboingAnimationTimingFunction: {
+			animoraAnimationTimingFunction: {
 				type: 'string',
 				default: 'default',
 			},
-			gutenboingRepeatAnimation: {
+			animoraRepeatAnimation: {
 				type: 'string',
 				default: 'none',
 			},
-			gutenboingRepeatDuration: {
+			animoraRepeatDuration: {
 				type: 'number',
 			},
 		} );
@@ -90,7 +90,7 @@
 		return settings;
 	}
 
-	addFilter( 'blocks.registerBlockType', 'gutenboing/attributes', addAnimationAttributes );
+	addFilter( 'blocks.registerBlockType', 'animora/attributes', addAnimationAttributes );
 
 	/**
 	 * Build the controls shown for scroll-triggered animations.
@@ -100,46 +100,46 @@
 	 * @return {Array} control elements
 	 */
 	function scrollControls( attributes, setAttributes ) {
-		var durationValue = attributes.gutenboingAnimationDuration === undefined ? '' : String( attributes.gutenboingAnimationDuration );
-		var delayValue = attributes.gutenboingAnimationDelay === undefined ? '' : String( attributes.gutenboingAnimationDelay );
+		var durationValue = attributes.animoraAnimationDuration === undefined ? '' : String( attributes.animoraAnimationDuration );
+		var delayValue = attributes.animoraAnimationDelay === undefined ? '' : String( attributes.animoraAnimationDelay );
 
 		return [
 			el( SelectControl, {
 				key: 'animation',
-				label: __( 'Animation', 'gutenboing' ),
-				value: attributes.gutenboingAnimation,
+				label: __( 'Animation', 'animora' ),
+				value: attributes.animoraAnimation,
 				options: scrollAnimationOptions,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingAnimation: value } );
+					setAttributes( { animoraAnimation: value } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'duration',
 				type: 'number',
-				label: __( 'Duration (ms)', 'gutenboing' ),
+				label: __( 'Duration (ms)', 'animora' ),
 				placeholder: String( data.defaults.duration ),
 				value: durationValue,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingAnimationDuration: '' === value ? undefined : Number( value ) } );
+					setAttributes( { animoraAnimationDuration: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'delay',
 				type: 'number',
-				label: __( 'Delay (ms)', 'gutenboing' ),
+				label: __( 'Delay (ms)', 'animora' ),
 				placeholder: String( data.defaults.delay ),
 				value: delayValue,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingAnimationDelay: '' === value ? undefined : Number( value ) } );
+					setAttributes( { animoraAnimationDelay: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 			el( SelectControl, {
 				key: 'timing',
-				label: __( 'Timing function', 'gutenboing' ),
-				value: attributes.gutenboingAnimationTimingFunction,
+				label: __( 'Timing function', 'animora' ),
+				value: attributes.animoraAnimationTimingFunction,
 				options: timingOptions,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingAnimationTimingFunction: value } );
+					setAttributes( { animoraAnimationTimingFunction: value } );
 				},
 			} ),
 		];
@@ -153,27 +153,27 @@
 	 * @return {Array} control elements
 	 */
 	function repeatControls( attributes, setAttributes ) {
-		var durationValue = attributes.gutenboingRepeatDuration === undefined ? '' : String( attributes.gutenboingRepeatDuration );
+		var durationValue = attributes.animoraRepeatDuration === undefined ? '' : String( attributes.animoraRepeatDuration );
 
 		return [
 			el( SelectControl, {
 				key: 'repeat-animation',
-				label: __( 'Animation', 'gutenboing' ),
-				value: attributes.gutenboingRepeatAnimation,
+				label: __( 'Animation', 'animora' ),
+				value: attributes.animoraRepeatAnimation,
 				options: attentionAnimationOptions,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingRepeatAnimation: value } );
+					setAttributes( { animoraRepeatAnimation: value } );
 				},
 			} ),
 			el( TextControl, {
 				key: 'repeat-duration',
 				type: 'number',
-				label: __( 'Duration (ms)', 'gutenboing' ),
-				help: __( 'Number of milliseconds for one iteration of the animation and interval combined.', 'gutenboing' ),
+				label: __( 'Duration (ms)', 'animora' ),
+				help: __( 'Number of milliseconds for one iteration of the animation and interval combined.', 'animora' ),
 				placeholder: String( data.defaults.repeatDuration ),
 				value: durationValue,
 				onChange: function ( value ) {
-					setAttributes( { gutenboingRepeatDuration: '' === value ? undefined : Number( value ) } );
+					setAttributes( { animoraRepeatDuration: '' === value ? undefined : Number( value ) } );
 				},
 			} ),
 		];
@@ -184,11 +184,11 @@
 			var attributes = props.attributes;
 			var setAttributes = props.setAttributes;
 
-			if ( ! attributes || undefined === attributes.gutenboingAnimationType ) {
+			if ( ! attributes || undefined === attributes.animoraAnimationType ) {
 				return el( BlockEdit, props );
 			}
 
-			var animationType = attributes.gutenboingAnimationType || 'scroll';
+			var animationType = attributes.animoraAnimationType || 'scroll';
 			var modeControls = 'repeat' === animationType
 				? repeatControls( attributes, setAttributes )
 				: scrollControls( attributes, setAttributes );
@@ -196,11 +196,11 @@
 			var panelChildren = [
 				el( SelectControl, {
 					key: 'animation-type',
-					label: __( 'Animation type', 'gutenboing' ),
+					label: __( 'Animation type', 'animora' ),
 					value: animationType,
 					options: animationTypeOptions,
 					onChange: function ( value ) {
-						setAttributes( { gutenboingAnimationType: value } );
+						setAttributes( { animoraAnimationType: value } );
 					},
 				} ),
 			].concat( modeControls );
@@ -216,7 +216,7 @@
 						null,
 						[
 							PanelBody,
-							{ title: __( 'Animation', 'gutenboing' ), initialOpen: false },
+							{ title: __( 'Animation', 'animora' ), initialOpen: false },
 						].concat( panelChildren )
 					)
 				)
@@ -224,5 +224,5 @@
 		};
 	}, 'withAnimationControls' );
 
-	addFilter( 'editor.BlockEdit', 'gutenboing/controls', withAnimationControls );
+	addFilter( 'editor.BlockEdit', 'animora/controls', withAnimationControls );
 } )( window.wp );

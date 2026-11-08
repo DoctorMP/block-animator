@@ -7,13 +7,13 @@
  * is decoupled from the individual services it boots.
  *
  * To add a new service, implement Registrable and pass an instance to
- * the constructor in gutenboing.php — no changes needed here.
+ * the constructor in animora.php — no changes needed here.
  *
- * @package GutenBoing
+ * @package Animora
  * @since   0.1.0
  */
 
-namespace GutenBoing;
+namespace Animora;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

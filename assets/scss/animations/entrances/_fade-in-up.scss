@@ -1,14 +1,14 @@
-@keyframes gutenboing-fade-in-up {
+@keyframes animora-fade-in-up {
   100% {
 	opacity: 1;
 	transform: none;
   }
 }
 
-.gutenboing-fade-in-up {
+.animora-fade-in-up {
 	opacity: 0;
 	transform: translateY(50%);
-	&.gutenboing-animated {
-		animation-name: gutenboing-fade-in-up;
+	&.animora-animated {
+		animation-name: animora-fade-in-up;
 	}
 }

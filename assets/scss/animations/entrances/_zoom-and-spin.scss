@@ -1,12 +1,12 @@
-@keyframes gutenboing-zoom-and-spin {
+@keyframes animora-zoom-and-spin {
 	100% {
 		transform: none;
 	}
 }
 
-.gutenboing-zoom-and-spin {
+.animora-zoom-and-spin {
 	transform: scale(0) rotate(-1080deg);
-	&.gutenboing-animated {
-		animation-name: gutenboing-zoom-and-spin;
+	&.animora-animated {
+		animation-name: animora-zoom-and-spin;
 	}
 }

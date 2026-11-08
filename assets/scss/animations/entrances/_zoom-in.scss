@@ -1,12 +1,12 @@
-@keyframes gutenboing-zoom-in {
+@keyframes animora-zoom-in {
   100% {
 	transform: none;
   }
 }
 
-.gutenboing-zoom-in {
+.animora-zoom-in {
 	transform: scale(0);
-	&.gutenboing-animated {
-		animation-name: gutenboing-zoom-in;
+	&.animora-animated {
+		animation-name: animora-zoom-in;
 	}
 }

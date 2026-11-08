@@ -10,11 +10,11 @@
  * new animation here and it becomes available everywhere its category
  * is used.
  *
- * @package GutenBoing
+ * @package Animora
  * @since   0.1.0
  */
 
-namespace GutenBoing;
+namespace Animora;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -76,67 +76,67 @@ class Animations {
 		if ( null === $animations ) {
 			$animations = array(
 				self::NONE             => array(
-					'label'        => __( 'None', 'gutenboing' ),
+					'label'        => __( 'None', 'animora' ),
 					'site_default' => true,
 					'category'     => null,
 				),
 				self::DEFAULT_SENTINEL => array(
-					'label'        => __( 'Default', 'gutenboing' ),
+					'label'        => __( 'Default', 'animora' ),
 					'site_default' => false,
 					'category'     => null,
 				),
 				'fade-in'              => array(
-					'label'        => __( 'Fade In', 'gutenboing' ),
+					'label'        => __( 'Fade In', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-up'           => array(
-					'label'        => __( 'Fade In Up', 'gutenboing' ),
+					'label'        => __( 'Fade In Up', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-right'        => array(
-					'label'        => __( 'Fade In Right', 'gutenboing' ),
+					'label'        => __( 'Fade In Right', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'fade-in-left'         => array(
-					'label'        => __( 'Fade In Left', 'gutenboing' ),
+					'label'        => __( 'Fade In Left', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-in'              => array(
-					'label'        => __( 'Zoom In', 'gutenboing' ),
+					'label'        => __( 'Zoom In', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-and-fade'        => array(
-					'label'        => __( 'Zoom and Fade', 'gutenboing' ),
+					'label'        => __( 'Zoom and Fade', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'zoom-and-spin'        => array(
-					'label'        => __( 'Zoom and Spin', 'gutenboing' ),
+					'label'        => __( 'Zoom and Spin', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_SCROLL,
 				),
 				'shake'                => array(
-					'label'        => __( 'Shake', 'gutenboing' ),
+					'label'        => __( 'Shake', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'pulse'                => array(
-					'label'        => __( 'Pulse', 'gutenboing' ),
+					'label'        => __( 'Pulse', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'heartbeat'            => array(
-					'label'        => __( 'Heartbeat', 'gutenboing' ),
+					'label'        => __( 'Heartbeat', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),
 				'blink'                => array(
-					'label'        => __( 'Blink', 'gutenboing' ),
+					'label'        => __( 'Blink', 'animora' ),
 					'site_default' => true,
 					'category'     => self::CATEGORY_ATTENTION,
 				),

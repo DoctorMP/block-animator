@@ -2,8 +2,8 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: GutenBoing 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gutenboing\n"
+"Project-Id-Version: Animora 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/animora\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,34 +14,34 @@ msgstr ""
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: manual\n"
-"X-Domain: gutenboing\n"
+"X-Domain: animora\n"
 
 
 #. Plugin Name of the plugin
-#: gutenboing.php
+#: animora.php
 #: inc/class-settings.php:58
 #: inc/class-settings.php:59
 #: inc/class-settings.php:192
-msgid "GutenBoing"
+msgid "Animora"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: gutenboing.php
-msgid "https://michal-pawelczyk.net/wp-plugins/gutenboing"
+#: animora.php
+msgid "https://michal-pawelczyk.net/wp-plugins/animora"
 msgstr ""
 
 #. Description of the plugin
-#: gutenboing.php
+#: animora.php
 msgid "Adds scroll-triggered CSS animations to any block in the block editor."
 msgstr "Ajoute des animations CSS déclenchées par le défilement à n'importe quel bloc dans l'éditeur de blocs."
 
 #. Author of the plugin
-#: gutenboing.php
+#: animora.php
 msgid "Michał Pawelczyk"
 msgstr ""
 
 #. Author URI of the plugin
-#: gutenboing.php
+#: animora.php
 msgid "https://michal-pawelczyk.net"
 msgstr ""
 

@@ -21,11 +21,11 @@
  * assets/js/editor.js's addAnimationAttributes() — same keys, types,
  * and defaults.
  *
- * @package GutenBoing
+ * @package Animora
  * @since   0.1.0
  */
 
-namespace GutenBoing;
+namespace Animora;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -51,7 +51,7 @@ class Block_Attributes implements Registrable {
 	/**
 	 * Merge the animation attributes into a block type's registration
 	 * args. A block's own attribute definition — however unlikely a
-	 * name collision is given the "gutenboing" prefix — always wins.
+	 * name collision is given the "animora" prefix — always wins.
 	 *
 	 * @since  0.1.0
 	 * @param  array<string, mixed> $args Block type registration args.
@@ -74,29 +74,29 @@ class Block_Attributes implements Registrable {
 	 */
 	private static function attribute_schema(): array {
 		return array(
-			'gutenboingAnimationType'           => array(
+			'animoraAnimationType'           => array(
 				'type'    => 'string',
 				'default' => 'scroll',
 			),
-			'gutenboingAnimation'               => array(
+			'animoraAnimation'               => array(
 				'type'    => 'string',
 				'default' => Animations::NONE,
 			),
-			'gutenboingAnimationDuration'       => array(
+			'animoraAnimationDuration'       => array(
 				'type' => 'number',
 			),
-			'gutenboingAnimationDelay'          => array(
+			'animoraAnimationDelay'          => array(
 				'type' => 'number',
 			),
-			'gutenboingAnimationTimingFunction' => array(
+			'animoraAnimationTimingFunction' => array(
 				'type'    => 'string',
 				'default' => Timing_Functions::DEFAULT_SENTINEL,
 			),
-			'gutenboingRepeatAnimation'         => array(
+			'animoraRepeatAnimation'         => array(
 				'type'    => 'string',
 				'default' => Animations::NONE,
 			),
-			'gutenboingRepeatDuration'          => array(
+			'animoraRepeatDuration'          => array(
 				'type' => 'number',
 			),
 		);
