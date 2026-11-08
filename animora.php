@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Animora: Animations for Blocks
- * Plugin URI: https://michal-pawelczyk.net/projects/animora-animacje-dla-blokow/
+ * Plugin URI: htthttps://github.com/DoctorMP/block-animator
  * Description: Adds scroll-triggered CSS animations to any block in the block editor.
- * Version: 0.1.0
- * Author: Michał Pawelczyk
+ * Version: 1.0.0
+ * Author: Michał Pawełczyk
  * Author URI: https://michal-pawelczyk.net
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
